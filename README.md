@@ -20,3 +20,8 @@ Installing fabric-ceph
 By this command, revelent files will be extracted to /opt/abric-ceph
 Useage
 -----------------------------------
+    fab install_rpm_all:...
+    fab create_install_repo
+    fab install_ceph
+    ... ...
+For more information, please refer to ``instruction``
