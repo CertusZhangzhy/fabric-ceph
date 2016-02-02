@@ -1,0 +1,52 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="adminApp"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{pageTitle}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="styles/665d1cc2.main.css">
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">你正在使用一个过期的浏览器，
+            <a href="http://browsehappy.com/">请立即升级您的浏览器</a>或者
+            <a href="http://www.google.com/chromeframe/?redirect=true">安装谷歌浏览器</a>，已更好的体验这个网站。</p>
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="bower_components/es5-shim/es5-shim.js"></script>
+        <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <a class="brand" href="http://ceph.com"><img src="images/834f2aec.logo.png" alt="Ceph Logo"></a>
+            </ul>
+            <button class="pull-right btn btn-danger dashboard-button" ng-click="dashboard()">Go to Dashboard</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row card span12">
+            <div class="tabbable tabs-left">
+                <ul class="nav nav-tabs">
+                    <li ng-class="{'active': entry.url == '#/' + activeTab}" ng-repeat="entry in menus">
+                        <a href="{{entry.url}}">{{entry.label}}</a>
+                    </li>
+                </ul>
+                <div class="tab-content" ng-view=""></div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/68385f58.angular.js"></script>
+    <script src="scripts/bcbdfc2f.scripts.js"></script>
+    <script src="scripts/d41d8cd9.plugins.js"></script>
+    <script src="scripts/f0f38ed3.modules.js"></script>
+</body>
+</html>

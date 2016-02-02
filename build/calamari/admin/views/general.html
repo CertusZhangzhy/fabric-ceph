@@ -1,0 +1,19 @@
+<h4>{{title}}
+    <i ng-show="loading" class="icon-spinner icon-spin"></i>
+    <i class="spacing-hack icon-ok"></i>
+</h4>
+<hr class="settings-separator">
+<form class="form-horizontal">
+    <div class="control-group">
+        <label class="control-label" for="version">Version</label>
+        <div class="controls">
+            <input type="text" id="version" readonly="true" value="{{general.version}}">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="version">Build</label>
+        <div class="controls">
+            <input type="text" id="version" readonly="true" value="{{general.git}}">
+        </div>
+    </div>
+</form>
