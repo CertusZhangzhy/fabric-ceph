@@ -1,4 +1,4 @@
-<h1>fabric-ceph</h1>
+fabric-ceph
 ===================================
 ``fabric-ceph`` is a tool to install config and deploy ceph cluster, which supports:
 * ceph 0.94.5
@@ -7,11 +7,11 @@
 * Automatic deployment and purge CEPH
 * Automatic install and config zabbix-agent
 * Automatic install and config calamari
-<h2>Building fabric-ceph</h2>
+Building fabric-ceph
 -----------------------------------
 
-<h2>Installing fabric-ceph</h2>
+Installing fabric-ceph
 -----------------------------------
 
-<h2>Useage</h2>
+Useage
 -----------------------------------
