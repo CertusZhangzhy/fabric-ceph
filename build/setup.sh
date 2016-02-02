@@ -24,6 +24,6 @@ cd /opt/fabric-ceph/bin; cp -f /opt/fabric-ceph/build/setup_ceph.py ./
 # Remove existing python-crypto-2.0.1 rpm.
 yum -y --disablerepo=* remove python-crypto-2.0.1
 
-#Install basic packages 
+# Install basic packages 
 yum -y --disablerepo=* --enablerepo=fabric-ceph install fabric
 
