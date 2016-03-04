@@ -86,7 +86,7 @@ def install_pkg_node(pkg, *args):
             run('mkdir -p %s' % temp_dir)
             put(pkg, '%s/%s' % (temp_dir, pkg_name))
             if pkg.endswith('.rpm'):
-                run("yum --disablerepo=* -y localinstall %s/%s" % (temp_dir, pkg_name))
+                run("rpm -ivh --nodeps --force  %s/%s" % (temp_dir, pkg_name))
             elif pkg.endswith('.deb'):
                 run("dpkg -i %s/%s" % (temp_dir, pkg_name))
 
