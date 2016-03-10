@@ -34,8 +34,8 @@ env.ntp = {
 # each osd contains osd_path:journal_path
 # osd_path can be a folder
 env.osd_path = {
-    host3: '/home/osd0',
-    #host4: '/home/osd0',
+    host3: ['/home/osd0'],
+    #host4: ['/home/osd1','/home/osd2','/home/osd3'],
 }
 
 # items for zabbix
