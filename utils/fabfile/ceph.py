@@ -167,6 +167,7 @@ def install_ceph():
     with settings(password=env.password, warn_only=True):
     	run('yum install --disablerepo=\\* --enablerepo=fabric-ceph -y ceph-deploy')
     	run('yum install --disablerepo=\\* --enablerepo=fabric-ceph -y ceph')
+    	#run('yum install --disablerepo=\\* --enablerepo=fabric-ceph -y redhat-lsb-core')
 
 @task
 def ceph_clear_dirs():
@@ -275,15 +276,18 @@ def calamari_install_calamari():
     	#run('rm -f /etc/localtime')
     	#run('ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime')
     	#run('ntpdate pool.ntp.org')
-    	run('yum install --disablerepo=\\* --enablerepo=fabric-ceph -y calamari-server tcl expect')
-    	client_dir = '/opt/calamari/webapp/content'
+    	run('yum install --disablerepo=\\* --enablerepo=fabric-ceph -y calamari-server calamari-clients tcl expect')
+	'''    
+	client_dir = '/opt/calamari/webapp/content'
     	run('if [ -d %s ];then rm -rf %s/*;else mkdir -p %s;fi' % (client_dir,client_dir,client_dir))
     with cd('/opt/fabric-ceph/build/calamari'):
         file_dirs = ['login','admin','manage','dashboard']
         for dir in file_dirs:
             run('cp -r %s %s/' % (dir,client_dir))
-    run('sed -i "/^#ServerName www.example.com:80/a ServerName localhost:80" /etc/httpd/conf/httpd.conf')
-    run('systemctl restart httpd')
+	'''
+    #run('sed -i "/^#ServerName www.example.com:80/a ServerName localhost:80" /etc/httpd/conf/httpd.conf')
+    #run('systemctl restart httpd')
+    run('chmod 777 /var/log/calamari/cthulhu.log')
     put('/opt/fabric-ceph/build/calamari/setup_calamari.sh','/opt/fabric-ceph/bin')
     with cd('/opt/fabric-ceph/bin'):
         run('chmod +x setup_calamari.sh')
@@ -345,6 +349,7 @@ def uninstall_calamari():
     """Uninstall_calamari"""
     with settings(host_string=env.roledefs['calamari'][0], password=env.password, warn_only=True):
         run('rpm -e calamari-server')
+        run('rpm -e calamari-clients')
         run('rm -f /etc/httpd/conf.d/calamari.conf')
         run('rpm -e salt-master')
         run('rm -rf /var/log/salt/* /var/cache/salt/* /etc/salt/* /var/run/salt/*')

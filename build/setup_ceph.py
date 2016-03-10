@@ -30,10 +30,10 @@ def get_osd_path(hostname):
     
     host = get_host(hostname)
     osd_paths = env.osd_path[host]
-    osd_paths = osd_paths.split(';')
-    result = [osd_path.strip() for osd_path in osd_paths]
+    #osd_paths = osd_paths.split(';')
+    #result = [osd_path.strip() for osd_path in osd_paths]
     
-    return result
+    return osd_paths
 
 
 def get_ip(host):
