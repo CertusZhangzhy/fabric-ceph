@@ -16,7 +16,7 @@ Building fabric-ceph
 
 Installing fabric-ceph
 -----------------------------------
-    rpm -ivh fabric-ceph-1.0.0-3.x86_64.rpm
+    rpm -ivh fabric-ceph-{release}.x86_64.rpm
 By this command, revelent files will be extracted to ```/opt/abric-ceph```.
 Useage
 -----------------------------------

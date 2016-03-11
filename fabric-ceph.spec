@@ -10,7 +10,7 @@
 #################################################################################
 # common
 #################################################################################
-Name:		fabric-ceph
+Name:		FlexStorage
 Version: 	%{version}
 Release: 	%{?revision}
 Summary:        Ceph Deploy with the Fabric 	

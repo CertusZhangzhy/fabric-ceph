@@ -5,8 +5,8 @@ SHELL=bash
 SRC := $(shell pwd)
 
 # set these only if not set with ?=
-VERSION ?= 1.0.0
-REVISION ?=1
+VERSION ?= 1.0.1
+REVISION ?=0
 BUILD_PRODUCT_TGZ=$(SRC)/build.tar.gz
 
 RPM_REVISION ?=3
@@ -17,7 +17,7 @@ rpm:
 	cp fabric-ceph.spec $(RPMBUILD)/SPECS
 	( \
 	cd $(RPMBUILD); \
-	rpmbuild -bb --define "_topdir $(RPMBUILD)" --define "version $(VERSION)" --define "revision $(RPM_REVISION)" --define "tarname $(BUILD_PRODUCT_TGZ)" SPECS/fabric-ceph.spec; \
+	rpmbuild -bb --define "_topdir $(RPMBUILD)" --define "version $(VERSION)" --define "revision $(REVISION)" --define "tarname $(BUILD_PRODUCT_TGZ)" SPECS/fabric-ceph.spec; \
 	)
 
 # either put the build files into $DESTDIR on Ubuntu, or
